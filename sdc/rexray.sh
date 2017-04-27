@@ -18,7 +18,7 @@ rexray:
       spec:     /etc/docker/plugins/rexray.spec
       disabled: false
 scaleio:
-  endpoint:             https://$(cat /stack_name)_primary-mdm_1:443/api
+  endpoint:             https://$(cat /stack_name)-primary-mdm-1:443/api
   insecure:		true
   userName:             admin
   password:             password1?

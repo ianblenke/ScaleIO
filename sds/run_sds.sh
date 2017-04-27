@@ -4,7 +4,7 @@ set +x
 
 STACK_NAME=$(curl http://rancher-metadata/latest/self/stack/name)
 
-TB_IP=${STACK_NAME}_tb_1
+TB_IP=${STACK_NAME}-tb-1
 
 until </dev/tcp/$TB_IP/9011 > /dev/null; do echo "waiting for tb...." && sleep 5 ; done
 
@@ -18,7 +18,7 @@ rm -f /lib/systemd/system/basic.target.wants/*;
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 if [[ -z "$SIZE" ]]; then
-        SIZE=100
+        SIZE=50
 fi
 
 truncate -s ${SIZE}GB /device
